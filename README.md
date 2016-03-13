@@ -1,4 +1,4 @@
-meta基础知识
+<h3>meta基础知识</h3>
 
 H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
 
@@ -17,8 +17,8 @@ H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
 
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <!-- 可选default、black、black-translucent -->
-viewport模板
-viewport模板——通用
+<h3>viewport模板</h3>
+<h3>viewport模板——通用</h3>
 
 <!DOCTYPE html>
 <html>
@@ -60,17 +60,17 @@ viewport模板 – target-densitydpi=device-dpi，android 2.3.5以下版本不�
 </html>
 参考案例：http://action.weixin.qq.com/payact/readtemplate?t=mobile/2015/wxzfsht/index_tmpl
 
-常见问题
+<h3>常见问题</h3>
 
-移动端如何定义字体font-family
-中文字体使用系统默认即可，英文用Helvetica
+<h3>移动端如何定义字体font-family</h3>
+<h3>中文字体使用系统默认即可，英文用Helvetica</h3>
 
-/* 移动端定义字体的代码 */
+<h3>/* 移动端定义字体的代码 */</h3>
 body{font-family:Helvetica;}
 参考《移动端使用字体的思考》
 
-移动端字体单位font-size选择px还是rem
-对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可
+<h3>移动端字体单位font-size选择px还是rem
+对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可</h3>
 
 对于需要适配各种移动设备，使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备
 
@@ -87,7 +87,7 @@ html{font-size:10px}
 移动端touch事件(区分webkit 和 winphone)
 当用户手指放在移动设备在屏幕上滑动会触发的touch事件
 
-以下支持webkit
+<h1>以下支持webkit</h1>
 
 touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
 touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动
@@ -105,7 +105,7 @@ clientX、clientY在显示区的坐标
 target：当前元素
 参考：https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent
 
-以下支持winphone 8
+<h1>以下支持winphone 8</h1>
 
 MSPointerDown——当手指触碰屏幕时候发生。不管当前有多少只手指
 MSPointerMove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的html{-ms-touch-action: none;}可以阻止默认情况的发生：阻止页面滚动
@@ -122,7 +122,7 @@ MSPointerUp——当手指离开屏幕时触发
 
 原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接<a href=”#”></a>，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。
 
-解决方案：
+<h1>解决方案：</h1>
 
 fastclick可以解决在手机上点击事件的300ms延迟
 zepto的touch模块，tap事件也是为了解决在click的延迟问题
@@ -132,7 +132,7 @@ ontouchstart
 ontouchmove
 ontouchend
 onclick
-解决300ms延迟的问题，也可以通过绑定ontouchstart事件，加快对事件的响应
+<h1>解决300ms延迟的问题，也可以通过绑定ontouchstart事件，加快对事件的响应</h1>
 
 什么是Retina 显示屏，带来了什么问题
 retina：一种具备超高像素密度的液晶屏，同样大小的屏幕上显示的像素点由1个变为多个，如在同样带下的屏幕上，苹果设备的retina显示屏中，像素点1个变为4个
