@@ -2,63 +2,44 @@
 
 H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-忽略将页面中的数字识别为电话号码
+`<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />`
+<p>忽略将页面中的数字识别为电话号码</p>
 
-<meta name="format-detection" content="telephone=no" />
-忽略Android平台中对邮箱地址的识别
+`<meta name="format-detection" content="telephone=no" />`
+`<meta name="format-detection" content="email=no" />`
+<p>当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari</p>
 
-<meta name="format-detection" content="email=no" />
-当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari
+`<meta name="apple-mobile-web-app-capable" content="yes" />`
+<p><!-- ios7.0版本以后，safari上已看不到效果 --></p>
+<p>将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</p>
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<!-- ios7.0版本以后，safari上已看不到效果 -->
-将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式
-
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+`<meta name="apple-mobile-web-app-status-bar-style" content="black" />`
 <!-- 可选default、black、black-translucent -->
 <h3>viewport模板</h3>
 <h3>viewport模板——通用</h3>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-<meta content="yes" name="apple-mobile-web-app-capable">
-<meta content="black" name="apple-mobile-web-app-status-bar-style">
-<meta content="telephone=no" name="format-detection">
-<meta content="email=no" name="format-detection">
-<title>标题</title>
-<link rel="stylesheet" href="index.css">
-</head>
+`<!DOCTYPE html>`<p>
+`<html>`<p>
+`<head>`<p>
+`<meta charset="utf-8">`<p>
+`<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-``scalable=no" name="viewport">`<p>
+`<meta content="yes" name="apple-mobile-web-app-capable">`<p>
+`<meta content="black" name="apple-mobile-web-app-status-bar-style">`<p>
+`<meta content="telephone=no" name="format-detection">`<p>
+`<meta content="email=no" name="format-detection">`<p>
+`<title>标题</title>`<p>
+`<link rel="stylesheet" href="index.css">`<p>
+`</head>`<p>
 
-<body>
+`<body>`<p>
 这里开始内容
-</body>
+`</body>`<p>
 
-</html>
-viewport模板 – target-densitydpi=device-dpi，android 2.3.5以下版本不支持
+`</html>`<p>
+<p>viewport模板 – target-densitydpi=device-dpi，android 2.3.5以下版本不支持</P>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi"><!-- width取值与页面定义的宽度一致 -->
-<meta content="yes" name="apple-mobile-web-app-capable">
-<meta content="black" name="apple-mobile-web-app-status-bar-style">
-<meta content="telephone=no" name="format-detection">
-<meta content="email=no" name="format-detection">
-<title>标题</title>
-<link rel="stylesheet" href="index.css">
-</head>
-
-<body>
-这里开始内容
-</body>
-
-</html>
-参考案例：http://action.weixin.qq.com/payact/readtemplate?t=mobile/2015/wxzfsht/index_tmpl
+ 
+<p>参考案例：http://action.weixin.qq.com/payact/readtemplate?t=mobile/2015/wxzfsht/index_tmpl</p>
 
 <h3>常见问题</h3>
 
@@ -69,166 +50,166 @@ viewport模板 – target-densitydpi=device-dpi，android 2.3.5以下版本不�
 body{font-family:Helvetica;}
 参考《移动端使用字体的思考》
 
-<h3>移动端字体单位font-size选择px还是rem
-对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可</h3>
+<h3>移动端字体单位font-size选择px还是rem</h3>
+<h3>对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可</h3>
 
-对于需要适配各种移动设备，使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备
+<p>对于需要适配各种移动设备，使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备</p>
 
-rem配置参考：
+<h3>rem配置参考：</h3>
 
-html{font-size:10px}
-@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
-@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
-@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
-@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
-@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
-@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
-@media screen and (min-width:800px){html{font-size:25px}}
-移动端touch事件(区分webkit 和 winphone)
-当用户手指放在移动设备在屏幕上滑动会触发的touch事件
+<p>html{font-size:10px}
+<p>@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+<p>@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+<p>@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+<p>@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+<p>@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+<p>@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+<p>@media screen and (min-width:800px){html{font-size:25px}}
+<p>移动端touch事件(区分webkit 和 winphone)
+<p>当用户手指放在移动设备在屏幕上滑动会触发的touch事件
 
 <h1>以下支持webkit</h1>
 
-touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
-touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动
-touchend——当手指离开屏幕时触发
-touchcancel——系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用
-TouchEvent
+<p>touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+<p>touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的<p>preventDefault()可以阻止默认情况的发生：阻止页面滚动
+<p>touchend——当手指离开屏幕时触发
+<p>touchcancel——系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用
+<h3>TouchEvent</h3>
 
-touches：屏幕上所有手指的信息
-targetTouches：手指在目标区域的手指信息
-changedTouches：最近一次触发该事件的手指信息
-touchend时，touches与targetTouches信息会被删除，changedTouches保存的最后一次的信息，最好用于计算手指信息
-参数信息(changedTouches[0])
+<p>touches：屏幕上所有手指的信息
+<p>targetTouches：手指在目标区域的手指信息
+<p>changedTouches：最近一次触发该事件的手指信息
+<p>touchend时，touches与targetTouches信息会被删除，changedTouches保存的最后一次的信息，最好用于计算手指信息
+<p>参数信息(changedTouches[0])
 
-clientX、clientY在显示区的坐标
-target：当前元素
-参考：https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent
+<p>clientX、clientY在显示区的坐标
+<p>target：当前元素
+<p>参考：https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent
 
 <h1>以下支持winphone 8</h1>
 
-MSPointerDown——当手指触碰屏幕时候发生。不管当前有多少只手指
-MSPointerMove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的html{-ms-touch-action: none;}可以阻止默认情况的发生：阻止页面滚动
-MSPointerUp——当手指离开屏幕时触发
-移动端click屏幕产生200-300 ms的延迟响应
+<p>MSPointerDown——当手指触碰屏幕时候发生。不管当前有多少只手指
+<p>MSPointerMove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的html{-ms-touch-action: none;}可以阻止默认情况的发生：阻止页面滚动
+<p>MSPointerUp——当手指离开屏幕时触发
+<p>移动端click屏幕产生200-300 ms的延迟响应
 
-移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。
+<p>移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。
 
-以下是历史原因，来源一个公司内一个同事的分享：
+<p>以下是历史原因，来源一个公司内一个同事的分享：
 
-2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。
+<p>2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。
 
-双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。
+<p>双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。
 
-原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接<a href=”#”></a>，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。
+<p>原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接<a href=”#”></a>，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。</P>
 
 <h1>解决方案：</h1>
 
-fastclick可以解决在手机上点击事件的300ms延迟
-zepto的touch模块，tap事件也是为了解决在click的延迟问题
-触摸事件的响应顺序
+<p>fastclick可以解决在手机上点击事件的300ms延迟
+<p>zepto的touch模块，tap事件也是为了解决在click的延迟问题
+<p>触摸事件的响应顺序
 
-ontouchstart
-ontouchmove
-ontouchend
-onclick
+<p>ontouchstart
+<p>ontouchmove
+on<p>touchend
+<p>onclick
 <h1>解决300ms延迟的问题，也可以通过绑定ontouchstart事件，加快对事件的响应</h1>
 
-什么是Retina 显示屏，带来了什么问题
+<p>什么是Retina 显示屏，带来了什么问题
 retina：一种具备超高像素密度的液晶屏，同样大小的屏幕上显示的像素点由1个变为多个，如在同样带下的屏幕上，苹果设备的retina显示屏中，像素点1个变为4个
 
-在高清显示屏中的位图被放大，图片会变得模糊，因此移动端的视觉稿通常会设计为传统PC的2倍
+<p>在高清显示屏中的位图被放大，图片会变得模糊，因此移动端的视觉稿通常会设计为传统PC的2倍
 
-那么，前端的应对方案是：
+<p>那么，前端的应对方案是：
 
-设计稿切出来的图片长宽保证为偶数，并使用backgroud-size把图片缩小为原来的1/2
+<p>设计稿切出来的图片长宽保证为偶数，并使用backgroud-size把图片缩小为原来的1/2
 
-//例如图片宽高为：200px*200px，那么写法如下
+<p>//例如图片宽高为：200px*200px，那么写法如下
 
-.css{width:100px;height:100px;background-size:100px 100px;}
-其它元素的取值为原来的1/2，例如视觉稿40px的字体，使用样式的写法为20px
+<p>.css{width:100px;height:100px;background-size:100px 100px;}
+<p>其它元素的取值为原来的1/2，例如视觉稿40px的字体，使用样式的写法为20px
 
-.css{font-size:20px}
-参考《高清显示屏原理及设计方案》
+<p>.css{font-size:20px}
+<p>参考《高清显示屏原理及设计方案》
 
-ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉
+<p>ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉
 
-ios用户点击一个链接，会出现一个半透明灰色遮罩, 如果想要禁用，可设置-webkit-tap-highlight-color的alpha值为0，也就是属性值的最后一位设置为0就可以去除半透明灰色遮罩
+<p>ios用户点击一个链接，会出现一个半透明灰色遮罩, 如果想要禁用，可设置-webkit-tap-highlight-color的alpha值为0，也就是属性值的最后一位设置为0就可以去除半透明灰色遮罩
 
-a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0;)}
+<p>a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0;)}
 部分android系统中元素被点击时产生的边框怎么去掉
 
-android用户点击一个链接，会出现一个边框或者半透明灰色遮罩, 不同生产商定义出来额效果不一样，可设置-webkit-tap-highlight-color的alpha值为0去除部分机器自带的效果
+<p>android用户点击一个链接，会出现一个边框或者半透明灰色遮罩, 不同生产商定义出来额效果不一样，可设置-webkit-tap-highlight-color的alpha值为0去除部分机器自带的效果
 
-a,button,input,textarea{
+<p>a,button,input,textarea{
 -webkit-tap-highlight-color: rgba(0,0,0,0;)
 -webkit-user-modify:read-write-plaintext-only;
 }
--webkit-user-modify有个副作用，就是输入法不再能够输入多个字符
+<p>-webkit-user-modify有个副作用，就是输入法不再能够输入多个字符
 
-另外，有些机型去除不了，如小米2
+<p>另外，有些机型去除不了，如小米2
 
-对于按钮类还有个办法，不使用a或者input标签，直接用div标签
+<p>对于按钮类还有个办法，不使用a或者input标签，直接用div标签
 
-参考《如何去除android上a标签产生的边框》
+<p>参考《如何去除android上a标签产生的边框》
 
-winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉
+<p>winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉
 
 <meta name="msapplication-tap-highlight" content="no">
 webkit表单元素的默认外观怎么重置
 
-.css{-webkit-appearance:none;}
-webkit表单输入框placeholder的颜色值能改变么
+<p>.css{-webkit-appearance:none;}
+<p>webkit表单输入框placeholder的颜色值能改变么
 
-input::-webkit-input-placeholder{color:#AAAAAA;}
-input:focus::-webkit-input-placeholder{color:#EEEEEE;}
-webkit表单输入框placeholder的文字能换行么
-ios可以，android不行~
+<p>input::-webkit-input-placeholder{color:#AAAAAA;}
+<p>input:focus::-webkit-input-placeholder{color:#EEEEEE;}
+<p>webkit表单输入框placeholder的文字能换行么
+<p>ios可以，android不行~
 
-在textarea标签下都可以换行~
+<p>在textarea标签下都可以换行~
 
-IE10（winphone8）表单元素默认外观如何重置
-禁用 select 默认下拉箭头
+<p>IE10（winphone8）表单元素默认外观如何重置
+<p>禁用 select 默认下拉箭头
 
-::-ms-expand 适用于表单选择控件下拉箭头的修改，有多个属性值，设置它隐藏 (display:none) 并使用背景图片来修饰可得到我们想要的效果。
+<p>::-ms-expand 适用于表单选择控件下拉箭头的修改，有多个属性值，设置它隐藏 (display:none) 并使用背景图片来修饰可得到我们想要的效果。
 
-select::-ms-expand {
+<p>select::-ms-expand {
 display: none;
 }
-禁用 radio 和 checkbox 默认样式
+<p>禁用 radio 和 checkbox 默认样式
 
-::-ms-check 适用于表单复选框或单选按钮默认图标的修改，同样有多个属性值，设置它隐藏 (display:none) 并使用背景图片来修饰可得到我们想要的效果。
+<p>::-ms-check 适用于表单复选框或单选按钮默认图标的修改，同样有多个属性值，设置它隐藏 (display:none) 并使用背景图片来修饰可得到我们想要的效果。
 
-input[type=radio]::-ms-check,
+<p>input[type=radio]::-ms-check,
 input[type=checkbox]::-ms-check
 {
 display: none;
 }
-禁用PC端表单输入框默认清除按钮
+<p>禁用PC端表单输入框默认清除按钮
 
-当表单文本输入框输入内容后会显示文本清除按钮，::-ms-clear 适用于该清除按钮的修改，同样设置使它隐藏 (display:none) 并使用背景图片来修饰可得到我们想要的效果。
+<p>当表单文本输入框输入内容后会显示文本清除按钮，::-ms-clear 适用于该清除按钮的修改，同样设置使它隐藏 (display:none) 并使用背景图片来修饰可得到我们想要的效果。
 
-input[type=text]::-ms-clear,
+<p>input[type=text]::-ms-clear,
 input[type=tel]::-ms-clear,
 input[type=number]::-ms-clear
 {
 display: none;
 }
-禁止ios 长按时不触发系统的菜单，禁止ios&android长按时下载图片
+<p>禁止ios 长按时不触发系统的菜单，禁止ios&android长按时下载图片
 
-.css{-webkit-touch-callout: none}
-禁止ios和android用户选中文字
+<p>.css{-webkit-touch-callout: none}
+<p>禁止ios和android用户选中文字
 
-.css{-webkit-user-select:none}
-参考《如何改变表单元素的外观(for Webkit and IE10)》
+<p>.css{-webkit-user-select:none}
+<p>参考《如何改变表单元素的外观(for Webkit and IE10)》
 
-打电话发短信写邮件怎么实现
-打电话
+<p>打电话发短信写邮件怎么实现
+<p>打电话
 
-<a href="tel:0755-10086">打电话给:0755-10086</a>
+<p><a href="tel:0755-10086">打电话给:0755-10086</a>
 发短信，winphone系统无效
 
-<a href="sms:10086">发短信给: 10086</a>
+<p><a href="sms:10086">发短信给: 10086</a>
 写邮件，可参考《移动web页面给用户发送邮件的方法》
 
 <a href="mailto:peun@foxmail.com">peun@foxmail.com</a>
